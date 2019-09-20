@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/qr_code_layout"
+    android:background="@color/white_color"
+    android:keepScreenOn="true"
+    android:padding="16dp">
+
+    <SurfaceView
+        android:layout_width="260dp"
+        android:layout_height="200dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/camera_view"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/code_info"
+        android:layout_toEndOf="@+id/camera_view"
+        android:textSize="20sp"
+        android:layout_marginStart="16dp"
+        android:text="@string/nada_a_ler"
+        android:layout_alignParentTop="true"
+        />
+
+</RelativeLayout>

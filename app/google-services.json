@@ -1,0 +1,77 @@
+{
+  "project_info": {
+    "project_number": "898148526373",
+    "firebase_url": "https://smart-router-e4e3b.firebaseio.com",
+    "project_id": "smart-router-e4e3b",
+    "storage_bucket": "smart-router-e4e3b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898148526373:android:3accf492ddfe4bf9",
+        "android_client_info": {
+          "package_name": "com.marco.smartrouterdev"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898148526373-vvldh5i57pqb2lps937vsa2g1mtile2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAavbfIs1u8YM0sVSUIW24cWjBrWsI3C2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898148526373-vvldh5i57pqb2lps937vsa2g1mtile2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898148526373:android:f53470abcc233d2d",
+        "android_client_info": {
+          "package_name": "com.maseletrico.injetecmonitor"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898148526373-pg754k2oqksskaip36jojpcinodgci0q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.maseletrico.injetecmonitor",
+            "certificate_hash": "c4cf6821d2d894205b2a898b0a457361bb6e259a"
+          }
+        },
+        {
+          "client_id": "898148526373-vvldh5i57pqb2lps937vsa2g1mtile2d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAavbfIs1u8YM0sVSUIW24cWjBrWsI3C2o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898148526373-vvldh5i57pqb2lps937vsa2g1mtile2d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

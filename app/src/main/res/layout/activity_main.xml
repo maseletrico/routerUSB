@@ -1,0 +1,930 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_activity_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black_color"
+    tools:layout_editor_absoluteX="0dp"
+    tools:layout_editor_absoluteY="25dp">
+
+    <ImageView
+        android:id="@+id/image_view_gps_fix"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:src="@mipmap/gps_searching"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintHorizontal_bias="0.971"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_max"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:src="@drawable/vel30edit_min"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <!--TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView_unidade_hora_parcial"
+        android:text="h"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        app:layout_constraintLeft_toRightOf="@+id/tv_horimetro_parcial"
+        android:layout_marginLeft="8dp"
+        app:layout_constraintTop_toTopOf="@+id/tv_horimetro_parcial"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/tv_label_hora_pacial" /-->
+    <TextView
+        android:id="@+id/tv_hora_efetiva"
+        style="@style/textSize24ColorGreen"
+        android:layout_marginLeft="52dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="384dp"
+        android:layout_marginBottom="16dp"
+        android:text="@string/valor_hora_efetiva"
+        app:layout_constraintBottom_toTopOf="@+id/image_hora_efetiva"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/iv_accessPoint"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageView
+        android:id="@+id/ponteiro_velocidade"
+        android:layout_width="170dp"
+        android:layout_height="170dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:rotation="45"
+
+        android:src="@drawable/needle2_min"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView"
+        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <ImageView
+        android:id="@+id/imageView_temperatura_gauge"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:rotation="0"
+        android:src="@drawable/temperatura_edit_min"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.65" />
+
+    <ImageView
+        android:id="@+id/ponteiro_temperartura"
+        android:layout_width="130dp"
+        android:layout_height="128dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:rotation="186"
+        android:src="@drawable/needle2_min"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.845"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.76" />
+
+    <TextView
+        android:id="@+id/tv_temperatura_instantanea"
+        style="@style/textSize24ColorYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLength="3"
+        android:text="@string/valor_temp_inst"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_temperatura_gauge"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_temperatura_gauge"
+        app:layout_constraintRight_toRightOf="@+id/imageView_temperatura_gauge"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/alerta_manutenção"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="12dp"
+        android:layout_marginEnd="8dp"
+        android:contentDescription="@string/content_description"
+        android:src="@mipmap/wrench"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_cadeado"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_impacto_maximo" />
+
+    <ImageView
+        android:id="@+id/alerta_temperatura"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:src="@mipmap/alerta_temperatura"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_media"
+        app:layout_constraintEnd_toEndOf="@+id/ponto_vel_media"
+        app:layout_constraintHorizontal_bias="0.156"
+        app:layout_constraintStart_toStartOf="@+id/ponto_vel_media"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_media"
+        app:layout_constraintVertical_bias="0.7" />
+
+    <ImageView
+        android:id="@+id/alerta_cinto_segurança"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:contentDescription="@string/content_description"
+        android:src="@mipmap/seat_belt_open_red"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView"
+        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="1.0" />
+
+
+    <ImageView
+        android:id="@+id/ponto_vel_media"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:contentDescription="@string/content_description"
+        android:rotation="0"
+        android:src="@drawable/ponto_verde_min"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_max"
+        app:layout_constraintEnd_toEndOf="@+id/ponto_vel_max"
+        app:layout_constraintStart_toStartOf="@+id/ponto_vel_max"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_max" />
+
+    <ImageView
+        android:id="@+id/ponto_vel_max"
+        android:layout_width="280dp"
+        android:layout_height="280dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:rotation="0"
+        android:src="@drawable/ponto_vermelho_min"
+        app:layout_constraintBottom_toTopOf="@+id/tv_impacto_maximo"
+        app:layout_constraintEnd_toEndOf="@+id/imageView"
+        app:layout_constraintStart_toStartOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView" />
+
+    <TextClock
+        android:id="@+id/textClock"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/tv_horimetro_total"
+        style="@style/textSize24ColorYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView"
+        app:layout_constraintRight_toRightOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="@+id/imageView"
+        app:layout_constraintVertical_bias="0.83" />
+
+    <TextView
+        android:id="@+id/tv_horimetro_parcial"
+        style="@style/textSize24ColorYellow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/zero_virgula_zero"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_max"
+        app:layout_constraintLeft_toLeftOf="@+id/ponto_vel_media"
+        app:layout_constraintRight_toRightOf="@+id/ponto_vel_media"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_max"
+        app:layout_constraintVertical_bias="0.32999998" />
+
+    <TextView
+        android:id="@+id/tv_label_hora_pacial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/h_parcial"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_max"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintLeft_toLeftOf="@+id/ponto_vel_media"
+        app:layout_constraintRight_toRightOf="@+id/ponto_vel_media"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_max"
+        app:layout_constraintVertical_bias="0.24000001" />
+
+    <TextView
+        android:id="@+id/tv_label_acellerometer"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/symbol_g"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_impacto_maximo"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toRightOf="@+id/progressBar_acel_max"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ponto_vel_max" />
+
+    <ProgressBar
+        android:id="@+id/progressBar_acel_max"
+        style="@android:style/Widget.ProgressBar.Horizontal"
+        android:layout_width="164dp"
+        android:layout_height="23dp"
+        android:layout_centerHorizontal="true"
+
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:max="60"
+        android:progress="10"
+        android:progressDrawable="@drawable/progress_drawable"
+        app:layout_constraintEnd_toEndOf="@+id/ponto_vel_max"
+        app:layout_constraintStart_toStartOf="@+id/ponto_vel_max"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/tv_impacto_maximo"
+        style="@style/textSize20ColorGray"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLength="3"
+        android:text="@string/impacto_maximo"
+        app:layout_constraintBottom_toBottomOf="@+id/progressBar_acel_max"
+        app:layout_constraintLeft_toLeftOf="@+id/progressBar_acel_max"
+        app:layout_constraintRight_toRightOf="@+id/progressBar_acel_max"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_acel_max"
+        app:layout_constraintVertical_bias="0.0" />
+    <!--TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/yellow_color"
+        android:layout_weight="1"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:id="@+id/tv_dispositivo"
+        android:text="@string/dispositivo_nao_encontrado"
+        android:layout_marginTop="8dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nome_maquina"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_hodometro_gauge"
+        android:layout_marginLeft="8dp" /-->
+    <TextView
+        android:id="@+id/tv_nome_usuario"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="32dp"
+        android:layout_weight="1"
+        android:text="@string/usuario"
+        android:textColor="@color/yellow_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toBottomOf="@+id/imageView_temperatura_gauge" />
+
+    <TextView
+        android:id="@+id/tv_empresa_id"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/empresa"
+        android:textColor="@color/yellow_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toBottomOf="@+id/tv_nome_usuario" />
+
+    <TextView
+        android:id="@+id/tv_nome_maquina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/m_quina"
+        android:textColor="@color/yellow_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintLeft_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toBottomOf="@+id/tv_empresa_id" />
+
+
+    <ImageView
+        android:id="@+id/iv_battery_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        android:text="@string/zero"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_max"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_gps_fix"
+        app:layout_constraintStart_toStartOf="@+id/image_view_gps_fix"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.3" />
+
+    <ImageView
+        android:id="@+id/imageView_hodometro_gauge"
+        android:layout_width="180dp"
+        android:layout_height="180dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/gauge_limpo"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_impacto_maximo" />
+
+    <TextView
+        android:id="@+id/textView_titulo_hodometro"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/hodometro"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.495"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.095" />
+
+    <TextView
+        android:id="@+id/tv_valor_hodometrto"
+        style="@style/textSize24ColorYellow"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:maxLength="7"
+        android:text="@string/valor_hodometro"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.19999999" />
+
+    <TextView
+        android:id="@+id/tv_valor_hod_parcial"
+        style="@style/textSize24ColorYellow"
+        android:layout_marginStart="0dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/valor_hod_parcial"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.18"
+        app:layout_constraintLeft_toRightOf="@+id/textView_hodometro_parcial"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.39999998" />
+
+    <TextView
+        android:id="@+id/textView_hodometro_parcial"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/hod_parcial"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.034"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.408" />
+
+    <ImageView
+        android:id="@+id/imageView_gas_pistol"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.51"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.975"
+        app:srcCompat="@mipmap/gas_pump" />
+
+    <TextView
+        android:id="@+id/text_view_data_combustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/data"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.578" />
+
+    <TextView
+        android:id="@+id/text_view_hora_combustivel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/hora"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.13"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_data_combustivel"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <TextView
+        android:id="@+id/text_view_combustivel_abastecido"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="0dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/zero"
+        android:textColor="@color/yellow_color"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintLeft_toLeftOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintRight_toRightOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_data_combustivel"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/image_view_cadeado"
+        android:layout_width="58dp"
+        android:layout_height="42dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="@+id/image_hora_efetiva"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_gps_fix"
+        app:layout_constraintStart_toStartOf="@+id/image_view_gps_fix"
+        app:layout_constraintTop_toTopOf="@+id/image_hora_efetiva"
+        app:srcCompat="@mipmap/padlock" />
+
+    <ImageView
+        android:id="@+id/image_view_qrcode"
+        android:layout_width="49dp"
+        android:layout_height="41dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="268dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView_hodometro_gauge"
+        app:layout_constraintVertical_bias="1.0"
+        app:srcCompat="@mipmap/worker" />
+
+    <TextView
+        android:id="@+id/tv_horimetro_parcial_unidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/h"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_horimetro_parcial"
+        app:layout_constraintLeft_toRightOf="@+id/tv_horimetro_parcial"
+        app:layout_constraintTop_toTopOf="@+id/tv_horimetro_parcial"
+        app:layout_constraintVertical_bias="0.555" />
+
+    <TextView
+        android:id="@+id/tv_horimetro_unidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="2dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/h"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_horimetro_total"
+        app:layout_constraintLeft_toRightOf="@+id/tv_horimetro_total"
+        app:layout_constraintTop_toTopOf="@+id/tv_horimetro_total" />
+
+    <TextView
+        android:id="@+id/tv_hodometro_unidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/km"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_valor_hodometrto"
+        app:layout_constraintLeft_toRightOf="@+id/tv_valor_hodometrto"
+        app:layout_constraintTop_toTopOf="@+id/tv_valor_hodometrto" />
+
+    <TextView
+        android:id="@+id/tv_hodometro_parcial_unidade"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/km"
+        android:textColor="@color/white_color"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_valor_hod_parcial"
+        app:layout_constraintLeft_toRightOf="@+id/tv_valor_hod_parcial"
+        app:layout_constraintTop_toTopOf="@+id/tv_valor_hod_parcial" />
+
+    <TextView
+        android:id="@+id/tv_litros"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="4dp"
+        android:text="@string/l"
+        app:layout_constraintBottom_toBottomOf="@+id/text_view_combustivel_abastecido"
+        app:layout_constraintLeft_toRightOf="@+id/text_view_combustivel_abastecido"
+        app:layout_constraintTop_toTopOf="@+id/text_view_combustivel_abastecido"
+        app:layout_constraintVertical_bias="0.666" />
+
+    <ImageView
+        android:id="@+id/iv_accessPoint"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.01999998"
+        app:srcCompat="@mipmap/access_pont_red" />
+
+    <TextView
+        android:id="@+id/tv_dataTx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="@string/data_zero"
+        android:textColor="@color/white_color"
+        app:layout_constraintEnd_toStartOf="@+id/imageView_server"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_nome_maquina"
+        app:layout_constraintTop_toTopOf="@+id/imageView_server" />
+
+    <TextView
+        android:id="@+id/tv_horaTx"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/data_zero"
+        android:textColor="@color/white_color"
+        app:layout_constraintLeft_toLeftOf="@+id/tv_dataTx"
+        app:layout_constraintTop_toBottomOf="@+id/tv_dataTx" />
+
+    <TextView
+        android:id="@+id/tv_rele_delay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/trinta"
+        app:layout_constraintBottom_toTopOf="@+id/image_view_cadeado"
+        app:layout_constraintEnd_toEndOf="@+id/image_view_cadeado"
+        app:layout_constraintStart_toStartOf="@+id/image_view_cadeado" />
+
+    <ImageView
+        android:id="@+id/imageView_server"
+        android:layout_width="wrap_content"
+        android:layout_height="46dp"
+        android:layout_marginStart="268dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.984"
+        app:srcCompat="@mipmap/cloud_data" />
+
+    <TextView
+        android:id="@+id/text_view_data_manutencao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Data"
+        app:layout_constraintBottom_toBottomOf="@+id/alerta_manutenção"
+        app:layout_constraintStart_toEndOf="@+id/alerta_manutenção"
+        app:layout_constraintTop_toTopOf="@+id/alerta_manutenção"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/text_view_hora_manutencao"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="Hora"
+        app:layout_constraintBottom_toBottomOf="@+id/alerta_manutenção"
+        app:layout_constraintStart_toEndOf="@+id/text_view_data_manutencao"
+        app:layout_constraintTop_toTopOf="@+id/alerta_manutenção"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/chamada_manutenção"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_media"
+        app:layout_constraintEnd_toEndOf="@+id/ponto_vel_media"
+        app:layout_constraintHorizontal_bias="0.82"
+        app:layout_constraintStart_toStartOf="@+id/ponto_vel_media"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_media"
+        app:layout_constraintVertical_bias="0.71000004"
+        app:srcCompat="@mipmap/alerta_manutencao" />
+
+    <ImageView
+        android:id="@+id/imageView_CheckList"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:contentDescription="@string/content_description"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/tv_dataTx"
+        app:layout_constraintStart_toEndOf="@+id/image_view_qrcode"
+        app:layout_constraintTop_toTopOf="@+id/image_view_qrcode"
+        app:srcCompat="@mipmap/ic_check_list" />
+
+    <TextView
+        android:id="@+id/textView_temporario"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.06"
+        app:layout_constraintStart_toEndOf="@+id/tv_empresa_id"
+        app:layout_constraintTop_toTopOf="@+id/tv_nome_usuario"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView_temporario2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/textView_temporario"
+        app:layout_constraintStart_toStartOf="@+id/textView_temporario"
+        app:layout_constraintTop_toBottomOf="@+id/textView_temporario"
+        app:layout_constraintVertical_bias="0.050000012" />
+
+    <ImageView
+        android:id="@+id/image_hora_efetiva"
+        android:layout_width="40dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ponto_vel_max"
+        app:layout_constraintEnd_toEndOf="@+id/iv_accessPoint"
+        app:layout_constraintStart_toStartOf="@+id/iv_accessPoint"
+        app:layout_constraintTop_toTopOf="@+id/ponto_vel_max"
+        app:layout_constraintVertical_bias="0.93"
+        app:srcCompat="@mipmap/hour_meter_green" />
+
+    <TextView
+        android:id="@+id/tv_accuracy"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="0.00"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.98"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_gps_fix"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <ImageView
+        android:id="@+id/iv_vel_media"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_acel_max"
+        app:layout_constraintVertical_bias="0.159"
+        app:srcCompat="@drawable/vel30edit_min" />
+
+    <ImageView
+        android:id="@+id/iv_vel_pico"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.8"
+        app:layout_constraintStart_toEndOf="@+id/iv_vel_media"
+        app:layout_constraintTop_toTopOf="@+id/progressBar_acel_max"
+        app:layout_constraintVertical_bias="0.18"
+        app:srcCompat="@drawable/vel30edit_min" />
+
+    <ImageView
+        android:id="@+id/iv_ponteiro_media"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:rotation="45"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_vel_media"
+        app:layout_constraintEnd_toEndOf="@+id/iv_vel_media"
+        app:layout_constraintStart_toStartOf="@+id/iv_vel_media"
+        app:layout_constraintTop_toTopOf="@+id/iv_vel_media"
+        app:srcCompat="@drawable/needle2_min" />
+
+    <ImageView
+        android:id="@+id/iv_ponteiro_pico"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:rotation="45"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_vel_pico"
+        app:layout_constraintEnd_toEndOf="@+id/iv_vel_pico"
+        app:layout_constraintStart_toStartOf="@+id/iv_vel_pico"
+        app:layout_constraintTop_toTopOf="@+id/iv_vel_pico"
+        app:srcCompat="@drawable/needle2_min" />
+
+    <TextView
+        android:id="@+id/tv_version"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:text="V"
+        app:layout_constraintBottom_toBottomOf="@+id/tv_label_acellerometer"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.95"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view_cadeado" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:text="TextView"
+        android:textColor="@color/white_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_impacto_maximo"
+        tools:text="USB" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="TextView"
+        android:textColor="@color/white_color"
+        android:textColorLink="@color/white_color"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:text="Length" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
